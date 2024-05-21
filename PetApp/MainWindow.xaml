@@ -25,13 +25,32 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding PetImgS}" Width="100" Height="100" />
+                        <Image Source="{Binding ImgS}" Width="100" Height="100" Margin="5"/>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Age}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Color}" VerticalAlignment="Center"/>
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="FavoriteList" Grid.Row="1" Grid.Column="1"/>
+        <ListBox x:Name="FavoriteList" Grid.Row="1" Grid.Column="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding ImgS}" Width="100" Height="100" Margin="5"/>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Age}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Color}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Button Content="Add to favorites" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="AddToFavoriteButton_Click" Background="Green" Foreground="White" BorderBrush="Snow"/>
         <Button Content="Delete from favorites" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Click="DeleteFromFavoriteButton_Click" Background="Red" Foreground="White" BorderBrush="Snow"/>

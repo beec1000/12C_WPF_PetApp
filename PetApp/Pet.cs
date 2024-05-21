@@ -13,14 +13,14 @@ namespace PetApp
         public string Name { get; set; }
         public int Age { get; set; }
         public string Color { get; set; }
-        public string ImgS { get; set; }
+        public Uri ImgS { get; set; }
 
         public Pet(string name, int age, string color, string imgS)
         {
             Name = name;
             Age = age;
             Color = color;
-            ImgS = $"IMAGES/{imgS}.jpg";
+            ImgS =  new Uri(Path.Combine("IMAGES", imgS), UriKind.Relative);
         }
 
         public static List<Pet> FromFile(string path)
@@ -46,7 +46,7 @@ namespace PetApp
 
         public override string ToString()
         {
-            return $"{Name} | {Age} | {Color} {ImgS}";
+            return $"{Name}"; //| {Age} | {Color} {ImgS}";
         }
     }
 }

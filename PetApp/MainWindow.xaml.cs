@@ -13,7 +13,7 @@ namespace PetApp
 {
     public partial class MainWindow : Window
     {
-        List<Pet> pets = new List<Pet>();
+        private List<Pet> pets = new List<Pet>();
 
         public MainWindow()
         {
